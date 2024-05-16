@@ -4,6 +4,7 @@ document.getElementById("gacha-button").addEventListener("click", function () {
     items.push(getGachaItem());
   }
   displayResults(items);
+  logGachaTime();
 });
 
 function getGachaItem() {
@@ -31,3 +32,31 @@ function displayResults(items) {
     itemElement.classList.add("gacha-animation");
   });
 }
+
+function logGachaTime() {
+  fetch("/gacha", {
+    method: "POST",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data.message);
+      fetchLogs();
+    });
+}
+
+function fetchLogs() {
+  fetch("/logs")
+    .then((response) => response.json())
+    .then((data) => {
+      const logsList = document.getElementById("logs-list");
+      logsList.innerHTML = "";
+      data.forEach((log) => {
+        const logItem = document.createElement("li");
+        logItem.textContent = `ID: ${log[0]}, Time: ${log[1]}`;
+        logsList.appendChild(logItem);
+      });
+    });
+}
+
+// Fetch logs on page load
+fetchLogs();

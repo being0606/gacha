@@ -60,3 +60,12 @@ body {
     transform: scale(1);
   }
 }
+
+#logs-container {
+  margin-top: 20px;
+}
+
+#logs-list {
+  list-style: none;
+  padding: 0;
+}
