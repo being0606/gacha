@@ -1,33 +1,27 @@
-document
-  .getElementById("set-parameters")
-  .addEventListener("click", function () {
-    const SCount = parseInt(document.getElementById("S-count").value);
-    const RSRatio = parseFloat(document.getElementById("R-S-ratio").value);
-    const iterations = parseInt(document.getElementById("iterations").value);
-
-    localStorage.setItem("SCount", SCount);
-    localStorage.setItem("RSRatio", RSRatio);
-    localStorage.setItem("Iterations", iterations);
-
-    alert("Parameters set successfully!");
-  });
+let pullCount = 0;
+const totalIterations = parseInt(localStorage.getItem("Iterations")) || 1;
+const results = [];
 
 document.getElementById("gacha-button").addEventListener("click", function () {
   const SCount = parseInt(localStorage.getItem("SCount")) || 5;
   const RSRatio = parseFloat(localStorage.getItem("RSRatio")) || 1;
-  const iterations = parseInt(localStorage.getItem("Iterations")) || 1;
 
-  const results = [];
-  for (let i = 0; i < iterations; i++) {
+  if (pullCount < totalIterations) {
     const items1 = pullGacha(SCount, RSRatio);
     const items2 = pullGacha(SCount, RSRatio);
     results.push({ items1, items2 });
     displayResults(items1, "result-container1");
     displayResults(items2, "result-container2");
-  }
 
-  displaySummary(results);
-  logGachaTime();
+    pullCount++;
+
+    if (pullCount >= totalIterations) {
+      localStorage.setItem("gachaResults", JSON.stringify(results));
+      logGachaTime();
+      // Redirect to the results dashboard page
+      window.location.href = "2.html";
+    }
+  }
 });
 
 function getGachaItems(SCount, RSRatio) {
@@ -73,37 +67,6 @@ function displayResults(items, containerId) {
     if (item === "S") {
       itemElement.classList.add("gacha-animation");
     }
-  });
-}
-
-function displaySummary(results) {
-  const tableBody = document
-    .getElementById("results-table")
-    .getElementsByTagName("tbody")[0];
-  tableBody.innerHTML = ""; // Clear previous results
-
-  results.forEach((result, index) => {
-    const sCount1 = result.items1.filter((item) => item === "S").length;
-    const rCount1 = result.items1.filter((item) => item === "R").length;
-    const cCount1 = result.items1.filter((item) => item === "C").length;
-
-    const sCount2 = result.items2.filter((item) => item === "S").length;
-    const rCount2 = result.items2.filter((item) => item === "R").length;
-    const cCount2 = result.items2.filter((item) => item === "C").length;
-
-    const row1 = tableBody.insertRow();
-    row1.insertCell(0).innerText = `Iteration ${index + 1}`;
-    row1.insertCell(1).innerText = "Set 1";
-    row1.insertCell(2).innerText = sCount1;
-    row1.insertCell(3).innerText = rCount1;
-    row1.insertCell(4).innerText = cCount1;
-
-    const row2 = tableBody.insertRow();
-    row2.insertCell(0).innerText = `Iteration ${index + 1}`;
-    row2.insertCell(1).innerText = "Set 2";
-    row2.insertCell(2).innerText = sCount2;
-    row2.insertCell(3).innerText = rCount2;
-    row2.insertCell(4).innerText = cCount2;
   });
 }
 
