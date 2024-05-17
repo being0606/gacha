@@ -57,10 +57,18 @@ function displayResults(items, containerId) {
   const container = document.getElementById(containerId);
   container.innerHTML = ""; // Clear previous results
 
-  items.forEach((item) => {
+  items.forEach((item, index) => {
     const itemElement = document.createElement("div");
     itemElement.className = `gacha-item gacha-${item.toLowerCase()}`;
-    itemElement.textContent = item;
+    // Determine image path
+    const imgNumber = String((index % 3) + 1).padStart(3, "0"); // 001, 002, 003
+    const imgPath = `../DATA/rank_${item}/img_${imgNumber}.webp`;
+
+    const imgElement = document.createElement("img");
+    imgElement.src = imgPath;
+    imgElement.alt = `${item} rank image`;
+
+    itemElement.appendChild(imgElement);
     container.appendChild(itemElement);
 
     // Add animation effect for S rank items
