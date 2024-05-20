@@ -16,18 +16,6 @@ body {
   margin: 0 auto;
 }
 
-#parameters {
-  margin-bottom: 20px;
-}
-
-#parameters label,
-#parameters input,
-#parameters select,
-#parameters button {
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-
 #gacha-button {
   padding: 10px 20px;
   font-size: 16px;
@@ -57,6 +45,17 @@ body {
   border: 2px solid #dddddd;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s; /* Add transition for smooth scaling */
+  cursor: pointer; /* Add cursor pointer for hover effect */
+}
+
+.result-container.scrollable {
+  max-height: 400px; /* Adjust as needed */
+  overflow-y: auto;
+}
+
+.result-container:hover {
+  transform: scale(1.05); /* Scale up on hover */
 }
 
 .gacha-item {
@@ -150,4 +149,44 @@ body {
 #logs-list {
   list-style: none;
   padding: 0;
+}
+
+#progress-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 30px;
+}
+
+#progress-bar-inner {
+  height: 100%;
+  background: green;
+  transition: width 0.2s;
+}
+
+#progress-bar-inner.incorrect {
+  background: red;
+}
+
+.result-container.correct {
+  background-color: green;
+}
+
+.result-container.incorrect {
+  background-color: red;
+}
+
+#feedback {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: white;
+  text-align: center;
+  z-index: 1000;
+  display: none;
 }
