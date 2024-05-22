@@ -1,192 +1,173 @@
+/* Global Styles */
 body {
   font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: #f0f0f0;
-  margin: 0;
+  height: 100vh;
 }
 
 .container {
-  text-align: center;
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-#gacha-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-#gacha-button:focus {
-  outline: none;
-}
-
-#results-container {
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-  gap: 20px;
-  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 80%;
+  max-width: 800px;
 }
 
-.result-container {
-  display: grid;
-  grid-template-columns: repeat(10, 50px); /* 10 columns */
-  grid-template-rows: repeat(5, 50px); /* 5 rows */
-  gap: 5px;
+header,
+footer {
+  text-align: center;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 10px;
-  background: #ffffff;
-  border: 2px solid #dddddd;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+form,
+.content {
+  background-color: white;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s; /* Add transition for smooth scaling */
-  cursor: pointer; /* Add cursor pointer for hover effect */
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.result-container.scrollable {
-  max-height: 400px; /* Adjust as needed */
-  overflow-y: auto;
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
-.result-container:hover {
-  transform: scale(1.05); /* Scale up on hover */
+button:hover {
+  background-color: #0056b3;
 }
 
-.gacha-item {
-  width: 50px;
-  height: 50px;
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+select,
+input[type="range"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Gacha Results Styles */
+#gachaResults {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#gachaResults div {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
-  font-weight: bold;
   border-radius: 5px;
+  font-size: 14px;
+}
+
+#itemS {
+  background-color: gold;
+  color: black;
+}
+
+#itemR {
+  background-color: silver;
+  color: black;
+}
+
+#itemC {
+  background-color: #cd7f32; /* Bronze color */
+  color: white;
+}
+
+/* Evaluation Form Styles */
+#evaluationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.likert-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: -10px;
+}
+
+#likertScale {
+  margin-bottom: 10px;
+}
+
+#pullCounter {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Dashboard Styles */
+#log {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Ensure images fit inside the div */
+  max-width: 100%;
+  overflow-y: auto;
+  max-height: 400px;
+  margin-bottom: 20px;
 }
 
-.gacha-item img {
+#log div {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#log div:last-child {
+  border-bottom: none;
+}
+
+/* Centering Buttons */
+form button,
+.content button {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure images cover the entire div */
-}
-
-.gacha-s {
-  background: yellow;
-  border: 2px solid gold;
-  color: white;
-  animation: shine 1s infinite;
-}
-
-.gacha-r {
-  background: purple;
-  border: 2px solid darkviolet;
-  color: white;
-}
-
-.gacha-c {
-  background: gray;
-  border: 2px solid darkgray;
-  color: white;
-}
-
-.gacha-animation {
-  animation: bounce 0.5s ease-out;
-}
-
-@keyframes bounce {
-  0% {
-    transform: scale(0.5);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes shine {
-  0% {
-    box-shadow: 0 0 5px gold;
-  }
-  50% {
-    box-shadow: 0 0 20px gold;
-  }
-  100% {
-    box-shadow: 0 0 5px gold;
-  }
-}
-
-#dashboard-container {
-  margin-top: 20px;
-}
-
-#results-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-#results-table th,
-#results-table td {
-  border: 1px solid #dddddd;
-  padding: 8px;
   text-align: center;
-}
-
-#logs-container {
-  margin-top: 20px;
-}
-
-#logs-list {
-  list-style: none;
-  padding: 0;
-}
-
-#progress-container {
-  margin-top: 20px;
-  width: 100%;
-}
-
-#progress-bar {
-  width: 100%;
-  height: 30px;
-}
-
-#progress-bar-inner {
-  height: 100%;
-  background: green;
-  transition: width 0.2s;
-}
-
-#progress-bar-inner.incorrect {
-  background: red;
-}
-
-.result-container.correct {
-  background-color: green;
-}
-
-.result-container.incorrect {
-  background-color: red;
-}
-
-#feedback {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 48px;
-  color: white;
-  text-align: center;
-  z-index: 1000;
-  display: none;
 }

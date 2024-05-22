@@ -3,41 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gacha Parameter Settings</title>
+    <title>Experiment Setup</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Gacha Parameter Settings</h1>
-      <div id="parameters">
-        <label for="S-count">S Count:</label>
-        <input
-          type="number"
-          id="S-count"
-          name="S-count"
-          min="0"
-          max="50"
-          value="5"
-        />
-        <label for="R-S-ratio">R/S Ratio:</label>
-        <select id="R-S-ratio" name="R-S-ratio">
-          <option value="1">1x</option>
-          <option value="1.5">1.5x</option>
-          <option value="2">2x</option>
-        </select>
-        <label for="iterations">Iterations:</label>
-        <input
-          type="number"
-          id="iterations"
-          name="iterations"
-          min="1"
-          value="1"
-        />
-        <label for="shuffle">Shuffle:</label>
-        <input type="checkbox" id="shuffle" name="shuffle" />
-        <button id="set-parameters">Set Parameters</button>
-      </div>
-      <script src="parameters.js"></script>
+      <header>
+        <h1>Experiment Setup</h1>
+      </header>
+      <main>
+        <form id="experimentForm">
+          <label for="sequence">Select Sequence of Experiments:</label>
+          <select id="sequence">
+            <option value="0">10S-1.0R</option>
+            <option value="1">10S-1.5R</option>
+            <option value="2">10S-2.0R</option>
+            <option value="3">20S-1.0R</option>
+            <option value="4">20S-1.5R</option>
+            <option value="5">20S-2.0R</option>
+            <option value="6">30S-1.0R</option>
+            <option value="7">30S-1.5R</option>
+            <option value="8">30S-2.0R</option>
+          </select>
+          <button type="button" onclick="startManualExperiment()">
+            Start Experiment
+          </button>
+          <button type="button" onclick="startRandomExperiment()">
+            실험 시작하기
+          </button>
+        </form>
+      </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

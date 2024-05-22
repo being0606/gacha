@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gacha Dashboard</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Gacha Dashboard</h1>
-      <button id="show-results">결과보기</button>
-      <ul id="logs-list" style="display: none"></ul>
-      <script src="dashboard.js"></script>
+      <header>
+        <h1>Experiment Dashboard</h1>
+      </header>
+      <main>
+        <div id="log"></div>
+        <button onclick="resetExperiment()">처음으로 돌아가기</button>
+      </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
