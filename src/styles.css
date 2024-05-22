@@ -1,13 +1,173 @@
+/* Global Styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 80%;
+  max-width: 800px;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
+  color: #333;
   font-size: 24px;
+  margin: 20px 0;
 }
 
 form,
-div {
+.content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+select,
+input[type="range"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Gacha Results Styles */
+#gachaResults {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#gachaResults div {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#itemS {
+  background-color: gold;
+  color: black;
+}
+
+#itemR {
+  background-color: silver;
+  color: black;
+}
+
+#itemC {
+  background-color: #cd7f32; /* Bronze color */
+  color: white;
+}
+
+/* Evaluation Form Styles */
+#evaluationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.likert-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: -10px;
+}
+
+#likertScale {
+  margin-bottom: 10px;
+}
+
+#pullCounter {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Dashboard Styles */
+#log {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  overflow-y: auto;
+  max-height: 400px;
+  margin-bottom: 20px;
+}
+
+#log div {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#log div:last-child {
+  border-bottom: none;
+}
+
+/* Centering Buttons */
+form button,
+.content button {
+  display: block;
+  width: 100%;
+  text-align: center;
 }

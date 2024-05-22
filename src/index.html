@@ -7,24 +7,33 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Experiment Setup</h1>
-    <form id="experimentForm">
-      <label for="sequence">Select Sequence of Experiments:</label>
-      <select id="sequence">
-        <option value="0">10S-1.0R</option>
-        <option value="1">10S-1.5R</option>
-        <option value="2">10S-2.0R</option>
-        <option value="3">20S-1.0R</option>
-        <option value="4">20S-1.5R</option>
-        <option value="5">20S-2.0R</option>
-        <option value="6">30S-1.0R</option>
-        <option value="7">30S-1.5R</option>
-        <option value="8">30S-2.0R</option>
-      </select>
-      <button type="button" onclick="startExperiment()">
-        Start Experiment
-      </button>
-    </form>
+    <div class="container">
+      <header>
+        <h1>Experiment Setup</h1>
+      </header>
+      <main>
+        <form id="experimentForm">
+          <label for="sequence">Select Sequence of Experiments:</label>
+          <select id="sequence">
+            <option value="0">10S-1.0R</option>
+            <option value="1">10S-1.5R</option>
+            <option value="2">10S-2.0R</option>
+            <option value="3">20S-1.0R</option>
+            <option value="4">20S-1.5R</option>
+            <option value="5">20S-2.0R</option>
+            <option value="6">30S-1.0R</option>
+            <option value="7">30S-1.5R</option>
+            <option value="8">30S-2.0R</option>
+          </select>
+          <button type="button" onclick="startManualExperiment()">
+            Start Experiment
+          </button>
+          <button type="button" onclick="startRandomExperiment()">
+            실험 시작하기
+          </button>
+        </form>
+      </main>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
