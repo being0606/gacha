@@ -57,7 +57,7 @@ form label {
 
 form input[type="text"],
 form select {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -125,24 +125,26 @@ form button.form-button {
   align-items: center;
   border-radius: 5px;
   font-size: 25px;
+  font-weight: bold;
+  font: Arial, sans-serif;
 }
 
 #itemS {
-  background-color: #ffd700; /* Gold */
+  background-color: #ffd900; /* Gold */
   color: black;
-  border: 2px solid #b8860b; /* Dark Gold */
+  border: 2px solid #815d01; /* Dark Gold */
 }
 
 #itemR {
-  background-color: #c0c0c0; /* Silver */
+  background-color: #66e569; /* Silver */
   color: black;
-  border: 2px solid #808080; /* Dark Silver/Grey */
+  border: 2px solid #006a00; /* Dark Silver/Grey */
 }
 
 #itemC {
-  background-color: #cd7f32; /* Bronze */
-  color: white;
-  border: 2px solid #8b4513; /* Dark Bronze/Brown */
+  background-color: #fa9f44; /* Bronze */
+  color: rgb(0, 0, 0);
+  border: 2px solid #6d3813; /* Dark Bronze/Brown */
 }
 
 /* Evaluation Form Styles */
