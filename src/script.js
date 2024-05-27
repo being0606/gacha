@@ -3,6 +3,7 @@ let experimentSequence = [];
 let gachaResults = [];
 let logData = [];
 let pullsRemaining = 10;
+let userName = "";
 
 const experimentParameters = [
   "10S-1.0R",
@@ -18,9 +19,11 @@ const experimentParameters = [
 
 function startManualExperiment() {
   const sequence = document.getElementById("sequence").value;
+  userName = document.getElementById("name").value;
   experimentSequence = sequence.split(",").map(Number);
   currentExperimentIndex = 0;
   pullsRemaining = 10;
+  localStorage.setItem("userName", userName);
   localStorage.setItem(
     "experimentSequence",
     JSON.stringify(experimentSequence)
@@ -31,11 +34,13 @@ function startManualExperiment() {
 }
 
 function startRandomExperiment() {
+  userName = document.getElementById("name").value;
   experimentSequence = Array.from({ length: 9 }, (_, i) => i).sort(
     () => Math.random() - 0.5
   );
   currentExperimentIndex = 0;
   pullsRemaining = 10;
+  localStorage.setItem("userName", userName);
   localStorage.setItem(
     "experimentSequence",
     JSON.stringify(experimentSequence)
@@ -116,12 +121,20 @@ function submitEvaluation() {
   const likertScale = document.getElementById("likertScale").value;
   gachaResults = JSON.parse(localStorage.getItem("gachaResults"));
 
+  // Collect GroundTruth
+  const groundTruth = gachaResults.flat().join("");
+
+  const now = new Date();
+  const timestamp = now.toISOString();
+
   logData.push({
     experimentIndex: currentExperimentIndex,
     sequence: experimentSequence[currentExperimentIndex],
     parameter: experimentParameters[experimentSequence[currentExperimentIndex]],
-    gachaResults: gachaResults,
     evaluation: likertScale,
+    groundTruth,
+    timestamp,
+    name: localStorage.getItem("userName"),
   });
 
   localStorage.setItem("logData", JSON.stringify(logData));
@@ -141,17 +154,23 @@ function submitEvaluation() {
 
 function loadDashboard() {
   logData = JSON.parse(localStorage.getItem("logData")) || [];
-  const logDiv = document.getElementById("log");
-  logDiv.innerHTML = "";
+  const logTableBody = document.querySelector("#log tbody");
+  logTableBody.innerHTML = "";
 
   logData.forEach((log, index) => {
-    const logEntry = document.createElement("div");
-    logEntry.innerHTML = `<strong>Experiment ${
-      index + 1
-    }</strong><br>Parameter: ${log.parameter}<br>Evaluation: ${
-      log.evaluation
-    }<br>`;
-    logDiv.appendChild(logEntry);
+    const row = logTableBody.insertRow(index);
+    const cellIndex = row.insertCell(0);
+    const cellName = row.insertCell(1);
+    const cellParameter = row.insertCell(2);
+    const cellEvaluation = row.insertCell(3);
+    const cellGroundTruth = row.insertCell(4);
+    const cellTimestamp = row.insertCell(5);
+    cellIndex.textContent = index + 1;
+    cellName.textContent = log.name;
+    cellParameter.textContent = log.parameter;
+    cellEvaluation.textContent = log.evaluation;
+    cellGroundTruth.textContent = log.groundTruth;
+    cellTimestamp.textContent = log.timestamp;
   });
 }
 
@@ -167,10 +186,40 @@ function updatePullCounter() {
   }
 }
 
+function downloadCSV() {
+  const logTableBody = document.querySelector("#log tbody");
+  let csvContent =
+    "data:text/csv;charset=utf-8,Index,Subject Name,Parameter,Evaluation,GroundTruth,Timestamp\n";
+
+  for (let row of logTableBody.rows) {
+    const cells = row.cells;
+    csvContent += `${cells[0].textContent},${cells[1].textContent},${cells[2].textContent},${cells[3].textContent},${cells[4].textContent},${cells[5].textContent}\n`;
+  }
+
+  const encodedUri = encodeURI(csvContent);
+  const link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  const userName = localStorage.getItem("userName") || "log";
+  link.setAttribute("download", `log_${userName}.csv`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   if (location.pathname.endsWith("dashboard.html")) {
     loadDashboard();
+    const resetButton = document.getElementById("reset-button");
+    const downloadCSVButton = document.getElementById("download-csv-button");
+
+    if (resetButton) {
+      resetButton.addEventListener("click", resetExperiment);
+    }
+    if (downloadCSVButton) {
+      downloadCSVButton.addEventListener("click", downloadCSV);
+    }
   }
+
   if (location.pathname.endsWith("gacha.html")) {
     updatePullCounter();
     const pullButton = document.getElementById("pullButton");

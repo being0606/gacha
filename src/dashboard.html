@@ -12,8 +12,25 @@
         <h1>Experiment Dashboard</h1>
       </header>
       <main>
-        <div id="log"></div>
-        <button onclick="resetExperiment()">처음으로 돌아가기</button>
+        <div class="table-container">
+          <table id="log">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Subject Name</th>
+                <th>Parameter</th>
+                <th>Evaluation</th>
+                <th>GroundTruth</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Log entries will be inserted here -->
+            </tbody>
+          </table>
+        </div>
+        <button id="reset-button">처음으로 돌아가기</button>
+        <button id="download-csv-button">Download Log as CSV</button>
       </main>
     </div>
     <script src="script.js"></script>

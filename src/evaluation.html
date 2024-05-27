@@ -9,27 +9,26 @@
   <body>
     <div class="container">
       <header>
-        <h1>Evaluation</h1>
+        <h1>Gacha Evaluation</h1>
       </header>
       <main>
         <form id="evaluationForm">
           <label for="likertScale">S등급 아이템이 많이 나타났습니까?</label>
-          <div class="likert-labels">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>5</span>
-            <span>6</span>
-            <span>7</span>
+          <div class="likert-container">
+            <div class="likert-labels">
+              <span>1</span><span>2</span><span>3</span> <span>4</span
+              ><span>5</span><span>6</span><span>7</span>
+            </div>
+            <input
+              type="range"
+              id="likertScale"
+              name="likertScale"
+              min="1"
+              max="7"
+              value="4"
+              class="likert-range"
+            />
           </div>
-          <input
-            type="range"
-            id="likertScale"
-            name="likertScale"
-            min="1"
-            max="7"
-          />
           <button type="button" onclick="submitEvaluation()">Submit</button>
         </form>
       </main>
