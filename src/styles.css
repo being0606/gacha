@@ -48,6 +48,32 @@ form,
   margin-bottom: 20px;
 }
 
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+form input[type="text"],
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"]:focus,
+form select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styles */
 button {
   background-color: #007bff;
   color: white;
@@ -57,7 +83,7 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 button:hover {
@@ -69,20 +95,17 @@ button:disabled {
   cursor: not-allowed;
 }
 
-label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
+/* Specific Button Adjustments */
+button#pullButton,
+button#startButton,
+button#waitButton {
+  width: 33.33%; /* Reduce button width */
+  padding: 5px 10px; /* Adjust padding */
 }
 
-select,
-input[type="range"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+/* Form-specific Button Padding */
+form button.form-button {
+  margin-bottom: 10px; /* Add margin between form buttons */
 }
 
 /* Gacha Results Styles */
@@ -94,29 +117,32 @@ input[type="range"] {
 }
 
 #gachaResults div {
-  width: 30px;
-  height: 30px;
-  margin: 5px;
+  width: 50px;
+  height: 50px;
+  margin: 7px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 25px;
 }
 
 #itemS {
-  background-color: gold;
+  background-color: #ffd700; /* Gold */
   color: black;
+  border: 2px solid #b8860b; /* Dark Gold */
 }
 
 #itemR {
-  background-color: silver;
+  background-color: #c0c0c0; /* Silver */
   color: black;
+  border: 2px solid #808080; /* Dark Silver/Grey */
 }
 
 #itemC {
-  background-color: #cd7f32; /* Bronze color */
+  background-color: #cd7f32; /* Bronze */
   color: white;
+  border: 2px solid #8b4513; /* Dark Bronze/Brown */
 }
 
 /* Evaluation Form Styles */
@@ -124,6 +150,7 @@ input[type="range"] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
 .likert-container {
@@ -135,9 +162,10 @@ input[type="range"] {
 .likert-labels {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  margin-bottom: -10px;
-  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 75px;
+  margin-right: 75px;
 }
 
 .likert-range {
@@ -151,26 +179,37 @@ input[type="range"] {
 }
 
 /* Dashboard Styles */
+.table-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  width: 100%;
+}
+
 #log {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 100%;
-  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-x: auto;
   margin-bottom: 20px;
 }
 
-#log div {
-  margin-bottom: 20px;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+#log th,
+#log td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: left;
 }
 
-#log div:last-child {
-  border-bottom: none;
+#log th {
+  background-color: #f9f9f9;
 }
 
+#log tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -188,12 +227,4 @@ td {
 th {
   background-color: #f2f2f2;
   font-weight: bold;
-}
-
-/* Centering Buttons */
-form button,
-.content button {
-  display: block;
-  width: 100%;
-  text-align: center;
 }
