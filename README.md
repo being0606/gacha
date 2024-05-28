@@ -15,7 +15,9 @@ HCI test website입니다.
 
 # gacha
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_BADGE_ID/deploy-status)](https://gacha-test-v3.netlify.app)
+<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_BADGE_ID/deploy-status)](https://gacha-test-v3.netlify.app) -->
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3679aa29-600c-43b0-afda-93a6155dab27/deploy-status)](https://app.netlify.com/sites/gacha-test-v3/deploys)
 
 Deployed web: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.app)
 
