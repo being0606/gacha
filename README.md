@@ -44,3 +44,9 @@ Deployed web: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.
 ### Interface 4: Evaluation
 
 ![Interface 4 Evaluation](./img/interface_4_evaluation.png)
+
+## Terminology
+
+1. **Pulling (풀링)**: 가챠를 뽑는 과정. 피험자는 Case별 10번의 Pulling을 진행함. Pull 버튼을 눌러 실시.
+2. **Item (아이템)**: 1회 Pulling 시 나오는 10개의 객체를 각각 아이템이라고 부름. 아이템에는 rank가 부여됨.
+3. **Rank (랭크)**: 본 실험에서 Rank는 3단계로 나누며 희귀도에 따라 S(super), R(rare), C(common)으로 구분됨.
