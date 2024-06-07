@@ -2,7 +2,9 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3679aa29-600c-43b0-afda-93a6155dab27/deploy-status)](https://app.netlify.com/sites/gacha-test-v3/deploys)
 
-**Deployed web**: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.app)
+## Deployed Web
+
+**Link**: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.app)
 
 ## Overview
 
@@ -68,3 +70,31 @@ After completing nine trials, results can be viewed on this screen and downloade
 
 ![Log Table](./img/interface_7_logtable.png)
 Log table example.
+
+## Experiment Environment Demo
+
+### Step 1: Consent Form and Survey
+
+<div align="center">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpELvjNIKBLMGdD9qjkgOgHsStuCaJFaAta0goKSlskDg-7g/viewform" target="_blank">
+    <img src="https://www.gstatic.com/images/branding/product/2x/forms_2020q4_48dp.png" alt="Google Forms" width="48" height="48" style="vertical-align:middle;" />
+    <br />
+    Google Forms: Consent Form and Survey
+  </a>
+</div>
+
+### Step 2: Experiment Explanation Video
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=RP6WzLtI7KY" target="_blank">
+    <img src="https://img.youtube.com/vi/RP6WzLtI7KY/0.jpg" alt="YouTube Video" width="300" height="200" style="border:1px solid #ccc;" />
+  </a>
+</div>
+
+### Step 3: Deployed Experiment Link
+
+<div align="center">
+  <a href="https://gacha-test-v3.netlify.app" target="_blank">
+    <strong>Deployed Experiment Link</strong>
+  </a>
+</div>
