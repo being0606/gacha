@@ -6,25 +6,6 @@
 
 **Link**: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.app)
 
-## Experiment Environment Demo
-
-### Step 1: Consent Form and Survey
-
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSdpELvjNIKBLMGdD9qjkgOgHsStuCaJFaAta0goKSlskDg-7g/viewform" target="_blank">
-  <img src="https://www.gstatic.com/images/branding/product/2x/forms_2020q4_48dp.png" alt="Google Forms" width="48" height="48" style="vertical-align:middle;" />
-  Google Forms: Consent Form and Survey
-</a>
-
-### Step 2: Experiment Explanation Video
-
-<a href="https://www.youtube.com/watch?v=RP6WzLtI7KY" target="_blank">
-  <img src="https://img.youtube.com/vi/RP6WzLtI7KY/0.jpg" alt="YouTube Video" width="300" height="200" style="border:1px solid #ccc;" />
-</a>
-
-### Step 3: Deployed Experiment Link
-
-**Link**: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.app)
-
 ## Overview
 
 Welcome to the Gacha Test V3 project, a Human-Computer Interaction (HCI) testing environment designed to simulate a gacha game system. This web application allows researchers to manipulate the probabilities associated with the gacha mechanics and collect subjective feedback from participants using a Likert 7-point scale. The primary objective of this platform is to analyze the perceived value and satisfaction derived from different reward structures typically found in gacha games.
@@ -89,3 +70,22 @@ After completing nine trials, results can be viewed on this screen and downloade
 
 ![Log Table](./img/interface_7_logtable.png)
 Log table example.
+
+## Experiment Environment Demo
+
+### Step 1: Consent Form and Survey
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdpELvjNIKBLMGdD9qjkgOgHsStuCaJFaAta0goKSlskDg-7g/viewform" target="_blank">
+  <img src="https://www.gstatic.com/images/branding/product/2x/forms_2020q4_48dp.png" alt="Google Forms" width="48" height="48" style="vertical-align:middle;" />
+  Google Forms: Consent Form and Survey
+</a>
+
+### Step 2: Experiment Explanation Video
+
+<a href="https://www.youtube.com/watch?v=RP6WzLtI7KY" target="_blank">
+  <img src="https://img.youtube.com/vi/RP6WzLtI7KY/0.jpg" alt="YouTube Video" width="300" height="200" style="border:1px solid #ccc;" />
+</a>
+
+### Step 3: Deployed Experiment Link
+
+**Link**: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.app)
