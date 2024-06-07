@@ -4,6 +4,15 @@
 
 **Deployed web**: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.app)
 
+<a href="https://www.youtube.com/watch?v=RP6WzLtI7KY" target="_blank">
+  <img src="https://img.youtube.com/vi/RP6WzLtI7KY/0.jpg" alt="YouTube Video" width="300" height="200" style="border:1px solid #ccc;" />
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdpELvjNIKBLMGdD9qjkgOgHsStuCaJFaAta0goKSlskDg-7g/viewform" target="_blank">
+  <img src="https://www.gstatic.com/images/branding/product/2x/forms_2020q4_48dp.png" alt="Google Forms" width="48" height="48" style="vertical-align:middle;" />
+  개인정보 사용 동의서 및 설문지
+</a>
+
 ## Overview
 
 Welcome to the Gacha Test V3 project, a Human-Computer Interaction (HCI) testing environment designed to simulate a gacha game system. This web application allows researchers to manipulate the probabilities associated with the gacha mechanics and collect subjective feedback from participants using a Likert 7-point scale. The primary objective of this platform is to analyze the perceived value and satisfaction derived from different reward structures typically found in gacha games.
