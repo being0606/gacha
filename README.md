@@ -8,20 +8,20 @@
 
 ## Experiment Environment Demo
 
-### Consent Form and Survey
+### Step 1: Consent Form and Survey
 
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpELvjNIKBLMGdD9qjkgOgHsStuCaJFaAta0goKSlskDg-7g/viewform" target="_blank">
   <img src="https://www.gstatic.com/images/branding/product/2x/forms_2020q4_48dp.png" alt="Google Forms" width="48" height="48" style="vertical-align:middle;" />
   Google Forms: Consent Form and Survey
 </a>
 
-### Experiment Explanation Video
+### Step 2: Experiment Explanation Video
 
 <a href="https://www.youtube.com/watch?v=RP6WzLtI7KY" target="_blank">
   <img src="https://img.youtube.com/vi/RP6WzLtI7KY/0.jpg" alt="YouTube Video" width="300" height="200" style="border:1px solid #ccc;" />
 </a>
 
-### Deployed Experiment Link
+### Step 3: Deployed Experiment Link
 
 **Link**: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.app)
 
