@@ -2,16 +2,28 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3679aa29-600c-43b0-afda-93a6155dab27/deploy-status)](https://app.netlify.com/sites/gacha-test-v3/deploys)
 
-**Deployed web**: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.app)
+## Deployed Web
+
+**Link**: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.app)
+
+## Experiment Environment Demo
+
+### Consent Form and Survey
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdpELvjNIKBLMGdD9qjkgOgHsStuCaJFaAta0goKSlskDg-7g/viewform" target="_blank">
+  <img src="https://www.gstatic.com/images/branding/product/2x/forms_2020q4_48dp.png" alt="Google Forms" width="48" height="48" style="vertical-align:middle;" />
+  Google Forms: Consent Form and Survey
+</a>
+
+### Experiment Explanation Video
 
 <a href="https://www.youtube.com/watch?v=RP6WzLtI7KY" target="_blank">
   <img src="https://img.youtube.com/vi/RP6WzLtI7KY/0.jpg" alt="YouTube Video" width="300" height="200" style="border:1px solid #ccc;" />
 </a>
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSdpELvjNIKBLMGdD9qjkgOgHsStuCaJFaAta0goKSlskDg-7g/viewform" target="_blank">
-  <img src="https://www.gstatic.com/images/branding/product/2x/forms_2020q4_48dp.png" alt="Google Forms" width="48" height="48" style="vertical-align:middle;" />
-  개인정보 사용 동의서 및 설문지
-</a>
+### Deployed Experiment Link
+
+**Link**: [https://gacha-test-v3.netlify.app](https://gacha-test-v3.netlify.app)
 
 ## Overview
 
